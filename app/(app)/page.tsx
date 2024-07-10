@@ -1,7 +1,7 @@
 import  HomeComponent  from "@/components/Homepage"
 export default function Home() {
   return (
-    <main className="flex items-center justify-center p-24">
+    <main className="pt-16">
       <HomeComponent />
     </main>
   );

@@ -19,7 +19,7 @@ export function SignupComponent() {
                     <LabelledInput label="Confirm Password" type="password" placeholder="Confirm Password" />
                     <div className="flex items-center justify-between">
                         <div className="text-sm">
-                            <a href="#" className="font-medium text-gray-600 hover:text-indigo-500">
+                            <a href="signin" className="font-medium text-gray-600 hover:text-indigo-500">
                                 Already have an account? Sign in
                             </a>
                         </div>

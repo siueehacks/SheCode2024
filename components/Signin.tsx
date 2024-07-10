@@ -32,7 +32,7 @@ export function SigninComponent() {
                     </div>
                 </form>
                 <div className="text-center">
-                    <a href="#" className="font-medium text-gray-600 hover:text-zinc-400">
+                    <a href="signup" className="font-medium text-gray-600 hover:text-zinc-400">
                         Don't have an account? Sign up
                     </a>
                 </div>
