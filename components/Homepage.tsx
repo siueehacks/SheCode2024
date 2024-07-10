@@ -3,8 +3,12 @@
 import Image from 'next/image';
 
 const HomeComponent = () => {
+  const audio = new Audio('/audio/home.mp3');
+  audio.volume = 0.01;
+  audio.autoplay = true;
   return (
     <div className=" w-full overflow-x-hidden relative ">
+      <audio src='/audio/home.mp3' loop={true}></audio>
       {/* <div className="absolute inset-0 bg-lines z-0 " id='bg-lines'></div> */}
       <div className="stars ">
         <div className="star"></div>
@@ -92,9 +96,9 @@ const HomeComponent = () => {
         <section id="gallery" className="my-12">
           <h2 className="text-4xl font-bold mb-4">Gallery</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <Image src="/path/to/image1.jpg" alt="Gallery Image 1" width={300} height={200} />
+            {/* <Image src="/path/to/image1.jpg" alt="Gallery Image 1" width={300} height={200} />
             <Image src="/path/to/image2.jpg" alt="Gallery Image 2" width={300} height={200} />
-            <Image src="/path/to/image3.jpg" alt="Gallery Image 3" width={300} height={200} />
+            <Image src="/path/to/image3.jpg" alt="Gallery Image 3" width={300} height={200} /> */}
           </div>
         </section>
 
