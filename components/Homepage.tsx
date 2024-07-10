@@ -4,8 +4,8 @@ import Image from 'next/image';
 
 const HomeComponent = () => {
   return (
-    <div className="bg-black min-h-screen overflow-x-hidden relative">
-      <div className="absolute inset-0 bg-lines z-0"></div>
+    <div className="bg-black w-full overflow-x-hidden relative ">
+      <div className="absolute inset-0 bg-lines z-0 "></div>
       <main className="px-6 py-12 text-white relative z-10 overflow-hidden">
         <section id="home" className="flex flex-col md:flex-row items-center justify-between my-12">
           <div className="text-center md:text-left md:w-1/2 mb-8 md:mb-0 relative z-10">
@@ -29,7 +29,7 @@ const HomeComponent = () => {
           </div>
         </section>
 
-        <section id="about" className="my-12">
+        <section id="about" className="my-12 ">
           <h2 className="text-4xl font-bold mb-4">About SheCode</h2>
           <p className="text-lg">
             SheCode is an inspiring event designed to spark the interest of high school girls in the world of coding and AI.

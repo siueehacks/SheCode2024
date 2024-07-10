@@ -8,8 +8,8 @@ export function Appbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-      <div className="fixed left-0 top-0 flex w-full justify-between items-center border-b border-gray-300 bg-black py-5 px-8 dark:border-neutral-800 dark:bg-zinc-900 dark:from-inherit">
+    <div className=" w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
+      <div className="z-20 fixed left-0 top-0 flex w-full justify-between items-center border-b border-gray-300 bg-black py-5 px-8 dark:border-neutral-800 dark:bg-zinc-900 dark:from-inherit">
         {/* Logo */}
         <div className="text-2xl font-bold text-white">
           <span>She</span><span className="text-fuchsia-500">Code</span>
