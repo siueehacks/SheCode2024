@@ -41,10 +41,6 @@
     height: 5px;
 }
 
-.animate-move-cloud {
-    animation: move-cloud 10s linear infinite;
-}
-
 @keyframes move-cloud {
     0% {
         transform: translate(0, 0);
@@ -59,40 +55,9 @@
     }
 }
 
-/* @keyframes move-lines {
-    0% {
-        back
-    }
-
-    100% {
-        background-color: blue;
-    }
-} */
-
-.bg-lines {
-    animation: move-lines 5s linear infinite;
+.animate-move-cloud {
+    animation: move-cloud 10s linear infinite;
 }
-
-#bg-lines::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(0deg,
-            transparent,
-            transparent 19px,
-            rgba(255, 0, 255, 0.1) 20px);
-    /* animation-name: move-lines;
-    animation-duration: 5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite; */
-    z-index: 1;
-}
-
-
-
 
 
 @mixin sp-layout {
@@ -118,20 +83,21 @@ body {
 
 .stars {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: -100%;
+    left: 20%;
     width: 100%;
-    height: 120%;
+    height: 300%;
+    // border: 2px solid red;
     transform: rotate(-45deg);
 }
 
 .star {
-    $star-count: 50;
+    $star-count: 100;
     --star-color: var(--pink);
     --star-tail-length: 6em;
     --star-tail-height: 2px;
     --star-width: calc(var(--star-tail-length) / 6);
-    --fall-duration: 9s;
+    --fall-duration: 20s;
     --tail-fade-duration: var(--fall-duration);
 
     position: absolute;
@@ -154,7 +120,7 @@ body {
     @for $i from 1 through $star-count {
         &:nth-child(#{$i}) {
             --star-tail-length: #{random_range(500em, 750em) / 100};
-            --top-offset: #{random_range(0vh, 10000vh) / 100};
+            --top-offset: #{random_range(0vh, 10000vh) / 50};
             --fall-duration: #{random_range(6000, 12000s) / 1000};
             --fall-delay: #{random_range(0, 10000s) / 1000};
         }

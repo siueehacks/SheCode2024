@@ -1,16 +1,119 @@
 'use client';
-
+import { useEffect, useRef, useState } from "react";
 import Image from 'next/image';
-
 const HomeComponent = () => {
-  const audio = new Audio('/audio/home.mp3');
-  audio.volume = 0.01;
-  audio.autoplay = true;
+  const musicPlayers = useRef<HTMLAudioElement | undefined>(
+    typeof Audio !== "undefined" ? new Audio("/audio/home.mp3") : undefined
+  );
+  let isPlaying = false;
+  useEffect(() => {
+    document.addEventListener('mousemove', () => {
+      if (musicPlayers.current && !isPlaying) {
+        musicPlayers.current.volume = 0.01;
+        musicPlayers.current.autoplay = true;
+        isPlaying = true;
+        musicPlayers.current.play().catch((err) => {
+          if (musicPlayers.current && !isPlaying) {
+            musicPlayers.current.volume = 0.01;
+          }
+          isPlaying = false;
+          return;
+        })
+      } else if (!musicPlayers.current) {
+        musicPlayers.current = new Audio('/audio/home.mp3');
+        musicPlayers.current.volume = 0.01;
+        musicPlayers.current.autoplay = true;
+        isPlaying = true;
+        musicPlayers.current.play().catch((err) => {
+          if (musicPlayers.current && !isPlaying) {
+            musicPlayers.current.volume = 0.01;
+          }
+          isPlaying = false;
+          return;
+        })
+      }
+    })
+    document.addEventListener('scroll', () => {
+      if (musicPlayers.current && !isPlaying) {
+        musicPlayers.current.volume = 0.01;
+        musicPlayers.current.autoplay = true;
+        musicPlayers.current.play().catch((err) => {
+          if (musicPlayers.current && !isPlaying) {
+            musicPlayers.current.volume = 0.01;
+          }
+          isPlaying = false;
+          return;
+        })
+        isPlaying = true;
+      } else if (!musicPlayers.current) {
+        musicPlayers.current = new Audio('/audio/home.mp3');
+        musicPlayers.current.volume = 0.01;
+        musicPlayers.current.autoplay = true;
+        musicPlayers.current.play().catch((err) => {
+          if (musicPlayers.current && !isPlaying) {
+            musicPlayers.current.volume = 0.01;
+          }
+          isPlaying = false;
+          return;
+        })
+        isPlaying = true;
+      }
+    });
+  })
   return (
     <div className=" w-full overflow-x-hidden relative ">
-      <audio src='/audio/home.mp3' loop={true}></audio>
       {/* <div className="absolute inset-0 bg-lines z-0 " id='bg-lines'></div> */}
       <div className="stars ">
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
         <div className="star"></div>
         <div className="star"></div>
         <div className="star"></div>
