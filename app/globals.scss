@@ -1,0 +1,215 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --darkPurple: rgb(19, 0, 22);
+    --purple: rgb(17, 0, 20);
+    --pink: rgb(217, 70, 239);
+    --lightPink: rgb(226, 146, 238);
+}
+
+
+/* Scrollbar Styles */
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #00000000;
+    width: 5px;
+    height: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--lightPink);
+    width: 5px;
+    height: 5px;
+    border-radius: 10px;
+    transition: all .2s ease-in-out;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--pink);
+    width: 5px;
+    height: 5px;
+}
+
+.animate-move-cloud {
+    animation: move-cloud 10s linear infinite;
+}
+
+@keyframes move-cloud {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-10px, -10px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* @keyframes move-lines {
+    0% {
+        back
+    }
+
+    100% {
+        background-color: blue;
+    }
+} */
+
+.bg-lines {
+    animation: move-lines 5s linear infinite;
+}
+
+#bg-lines::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(0deg,
+            transparent,
+            transparent 19px,
+            rgba(255, 0, 255, 0.1) 20px);
+    /* animation-name: move-lines;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; */
+    z-index: 1;
+}
+
+
+
+
+
+@mixin sp-layout {
+    @media screen and (max-width: 750px) {
+        @content;
+    }
+}
+
+body {
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    min-height: 100vh;
+    background: radial-gradient(ellipse at bottom, var(--purple) 0%, var(--darkPurple) 100%);
+    // overflow: hidden;
+}
+
+@function random_range($min, $max) {
+    $rand: random();
+    $random_range: $min + floor($rand * (($max - $min) + 1));
+    @return $random_range;
+}
+
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    transform: rotate(-45deg);
+}
+
+.star {
+    $star-count: 50;
+    --star-color: var(--pink);
+    --star-tail-length: 6em;
+    --star-tail-height: 2px;
+    --star-width: calc(var(--star-tail-length) / 6);
+    --fall-duration: 9s;
+    --tail-fade-duration: var(--fall-duration);
+
+    position: absolute;
+    top: var(--top-offset);
+    left: 0;
+    width: var(--star-tail-length);
+    height: var(--star-tail-height);
+    color: var(--star-color);
+    background: linear-gradient(45deg, currentColor, transparent);
+    border-radius: 50%;
+    filter: drop-shadow(0 0 6px currentColor);
+    transform: translate3d(104em, 0, 0);
+    animation: fall var(--fall-duration) var(--fall-delay) linear infinite, tail-fade var(--tail-fade-duration) var(--fall-delay) ease-out infinite;
+
+    @include sp-layout {
+        // For mobile performance, tail-fade animation will be removed QAQ
+        animation: fall var(--fall-duration) var(--fall-delay) linear infinite;
+    }
+
+    @for $i from 1 through $star-count {
+        &:nth-child(#{$i}) {
+            --star-tail-length: #{random_range(500em, 750em) / 100};
+            --top-offset: #{random_range(0vh, 10000vh) / 100};
+            --fall-duration: #{random_range(6000, 12000s) / 1000};
+            --fall-delay: #{random_range(0, 10000s) / 1000};
+        }
+    }
+
+    &::before,
+    &::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: calc(var(--star-width) / -2);
+        width: var(--star-width);
+        height: 100%;
+        background: linear-gradient(45deg, transparent, currentColor, transparent);
+        border-radius: inherit;
+        animation: blink 2s linear infinite;
+    }
+
+    &::before {
+        transform: rotate(45deg);
+    }
+
+    &::after {
+        transform: rotate(-45deg);
+    }
+}
+
+@keyframes fall {
+    to {
+        transform: translate3d(-30em, 0, 0);
+    }
+}
+
+@keyframes tail-fade {
+
+    0%,
+    50% {
+        width: var(--star-tail-length);
+        opacity: 1;
+    }
+
+    70%,
+    80% {
+        width: 0;
+        opacity: 0.4;
+    }
+
+    100% {
+        width: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0.6;
+    }
+}

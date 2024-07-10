@@ -4,8 +4,60 @@ import Image from 'next/image';
 
 const HomeComponent = () => {
   return (
-    <div className="bg-black w-full overflow-x-hidden relative ">
-      <div className="absolute inset-0 bg-lines z-0 "></div>
+    <div className=" w-full overflow-x-hidden relative ">
+      {/* <div className="absolute inset-0 bg-lines z-0 " id='bg-lines'></div> */}
+      <div className="stars ">
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+      </div>
       <main className="px-6 py-12 text-white relative z-10 overflow-hidden">
         <section id="home" className="flex flex-col md:flex-row items-center justify-between my-12">
           <div className="text-center md:text-left md:w-1/2 mb-8 md:mb-0 relative z-10">
@@ -16,15 +68,15 @@ const HomeComponent = () => {
               Apply Now
             </button>
           </div>
-          <div className="md:w-1/2 relative">
+          <div className="md:w-1/2 relative w-min justify-center flex flex-row">
             <Image src="/design.png" alt="SheCode" width={500} height={500} objectFit="cover" className="rounded-lg shadow-lg" />
-            <div className="absolute inset-0 flex justify-center items-center">
-              <div className="absolute -top-16 -left-16 w-64 h-64 bg-fuchsia-500 rounded-full mix-blend-multiply filter blur-lg opacity-50 animate-pulse"></div>
-              <div className="absolute -bottom-16 -right-16 w-64 h-64 bg-fuchsia-500 rounded-full mix-blend-multiply filter blur-lg opacity-50 animate-pulse"></div>
+            <div className="absolute inset-0 -z-10">
+              <div className="absolute -top-28 -left-16 w-64 h-64 bg-fuchsia-500 rounded-full mix-blend-multiply filter blur-lg opacity-50 animate-pulse"></div>
+              <div className="absolute -bottom-28 -right-4 w-64 h-64 bg-fuchsia-500 rounded-full mix-blend-multiply filter blur-lg opacity-50 animate-pulse"></div>
             </div>
-            <div className="absolute inset-0 flex justify-center items-center">
-              <div className="absolute -top-12 -left-12 w-56 h-56 bg-white rounded-full mix-blend-overlay filter blur-lg opacity-50 animate-move-cloud"></div>
-              <div className="absolute -bottom-12 -right-12 w-56 h-56 bg-white rounded-full mix-blend-overlay filter blur-lg opacity-50 animate-move-cloud"></div>
+            <div className="absolute inset-0 flex justify-center items-center -z-10">
+              <div className="absolute -top-20 -left-8 w-56 h-56 bg-white rounded-full mix-blend-overlay filter blur-lg opacity-50 animate-move-cloud"></div>
+              <div className="absolute -bottom-24 right-0 w-56 h-56 bg-white rounded-full mix-blend-overlay filter blur-lg opacity-50 animate-move-cloud"></div>
             </div>
           </div>
         </section>
@@ -61,50 +113,10 @@ const HomeComponent = () => {
         </section>
       </main>
 
-      <footer className="bg-gray-800 text-white p-6 text-center">
+      <footer className="bg-fuchsia-950 text-white p-6 text-center">
         <p>&copy; 2024 SheCode. All rights reserved.</p>
       </footer>
 
-      <style jsx>{`
-        .animate-move-cloud {
-          animation: move-cloud 10s linear infinite;
-        }
-        @keyframes move-cloud {
-          0% {
-            transform: translate(0, 0);
-          }
-          50% {
-            transform: translate(-10px, -10px);
-          }
-          100% {
-            transform: translate(0, 0);
-          }
-        }
-        .bg-lines::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 19px,
-            rgba(255, 0, 255, 0.1) 20px
-          );
-          animation: move-lines 5s linear infinite;
-          z-index: 1;
-        }
-        @keyframes move-lines {
-          0% {
-            background-position: 0 0;
-          }
-          100% {
-            background-position: 0 100%;
-          }
-        }
-      `}</style>
     </div>
   );
 };

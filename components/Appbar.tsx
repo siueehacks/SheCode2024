@@ -11,7 +11,7 @@ export function Appbar() {
     <div className=" w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
       <div className="z-20 fixed left-0 top-0 flex w-full justify-between items-center border-b border-gray-300 bg-black py-5 px-8 dark:border-neutral-800 dark:bg-zinc-900 dark:from-inherit">
         {/* Logo */}
-        <div className="text-2xl font-bold text-white">
+        <div className="text-2xl font-bold text-white cursor-default">
           <span>She</span><span className="text-fuchsia-500">Code</span>
         </div>
         {/* Burger Icon */}
@@ -22,11 +22,11 @@ export function Appbar() {
         </div>
         {/* Navigation Links */}
         <div className="hidden md:flex space-x-8 text-white">
-          <Link href="/" className="px-4 py-2 hover:text-fuchsia-400 transition-colors duration-300">Home</Link>
-          <Link href="#about" className="px-4 py-2 hover:text-fuchsia-400 transition-colors duration-300">About</Link>
-          <Link href="#gallery" className="px-4 py-2 hover:text-fuchsia-400 transition-colors duration-300">Gallery</Link>
-          <Link href="#sponsors" className="px-4 py-2 hover:text-fuchsia-400 transition-colors duration-300">Sponsors</Link>
-          <Link href="auth/signup" className="px-4 py-2 hover:text-fuchsia-400 transition-colors duration-300">Apply</Link>
+          <Link href="/" className=" px-4 py-1 hover:text-fuchsia-400 transition-colors duration-300 text-lg">Home</Link>
+          <Link href="#about" className="px-4 py-1 hover:text-fuchsia-400 transition-colors duration-300 text-lg">About</Link>
+          <Link href="#gallery" className="px-4 py-1 hover:text-fuchsia-400 transition-colors duration-300 text-lg">Gallery</Link>
+          <Link href="#sponsors" className="px-4 py-1 hover:text-fuchsia-400 transition-colors duration-300 text-lg">Sponsors</Link>
+          <Link href="auth/signup" className="px-4 py-1 hover:text-fuchsia-400 transition-colors duration-300 text-lg">Apply</Link>
         </div>
       </div>
       {isOpen && (
