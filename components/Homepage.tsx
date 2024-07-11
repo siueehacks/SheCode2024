@@ -1,8 +1,66 @@
 "use client";
 import Image from 'next/image';
 import Link from 'next/link';
-
-const Home = () => {
+import { useEffect, useRef } from "react";
+const HomeComponent = () => {
+  const musicPlayers = useRef<HTMLAudioElement | undefined>(
+    typeof Audio !== "undefined" ? new Audio("/audio/home.mp3") : undefined
+  );
+  let isPlaying = false;
+  useEffect(() => {
+    document.addEventListener('mousemove', () => {
+      if (musicPlayers.current && !isPlaying) {
+        musicPlayers.current.volume = 0.01;
+        musicPlayers.current.autoplay = true;
+        isPlaying = true;
+        musicPlayers.current.play().catch((err) => {
+          if (musicPlayers.current && !isPlaying) {
+            musicPlayers.current.volume = 0.01;
+          }
+          isPlaying = false;
+          return;
+        })
+      } else if (!musicPlayers.current) {
+        musicPlayers.current = new Audio('/audio/home.mp3');
+        musicPlayers.current.volume = 0.01;
+        musicPlayers.current.autoplay = true;
+        isPlaying = true;
+        musicPlayers.current.play().catch((err) => {
+          if (musicPlayers.current && !isPlaying) {
+            musicPlayers.current.volume = 0.01;
+          }
+          isPlaying = false;
+          return;
+        })
+      }
+    })
+    document.addEventListener('scroll', () => {
+      if (musicPlayers.current && !isPlaying) {
+        musicPlayers.current.volume = 0.01;
+        musicPlayers.current.autoplay = true;
+        musicPlayers.current.play().catch((err) => {
+          if (musicPlayers.current && !isPlaying) {
+            musicPlayers.current.volume = 0.01;
+          }
+          isPlaying = false;
+          return;
+        })
+        isPlaying = true;
+      } else if (!musicPlayers.current) {
+        musicPlayers.current = new Audio('/audio/home.mp3');
+        musicPlayers.current.volume = 0.01;
+        musicPlayers.current.autoplay = true;
+        musicPlayers.current.play().catch((err) => {
+          if (musicPlayers.current && !isPlaying) {
+            musicPlayers.current.volume = 0.01;
+          }
+          isPlaying = false;
+          return;
+        })
+        isPlaying = true;
+      }
+    });
+  })
   return (
     <div className="bg-black">
       <style jsx>{`
@@ -153,6 +211,110 @@ const Home = () => {
           100% { transform: translateX(100%); opacity: 0; }
         }
       `}</style>
+      <div className=" w-full overflow-x-hidden relative ">
+      {/* <div className="absolute inset-0 bg-lines z-0 " id='bg-lines'></div> */}
+      <div className="stars ">
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+        <div className="star"></div>
+      </div>
       <main className="px-12 py-24 text-white relative overflow-hidden pt-24">
         <section id="home" className="flex flex-col-reverse md:flex-row items-center justify-between my-12">
           <div className="text-center md:text-left md:w-1/2 mb-8 md:mb-0">
@@ -195,7 +357,7 @@ const Home = () => {
           <div className="md:w-1/2 px-12 relative mb-8 md:mb-0">
             <div className="relative">
               <div className="string landing"></div>
-              <Image className="landing-image" src="/landing.png" alt="SheCode" width={500} height={500} objectFit="cover" style={{borderRadius: "6vw"}}/>
+              <Image className="landing-image" src="/landing.png" alt="SheCode" width={500} height={500}  style={{borderRadius: "6vw"}}/>
             </div>
             <div className="absolute top-0 left-96 transform -translate-x-1/2 flex items-center justify-center">
               <div className="cloud large" style={{ width: '220px', height: '90px' }}>
@@ -216,7 +378,8 @@ const Home = () => {
         </section>
       </main>
     </div>
+    </div>
   );
 };
 
-export default Home;
+export default HomeComponent;
