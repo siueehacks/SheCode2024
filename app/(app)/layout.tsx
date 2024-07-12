@@ -5,7 +5,7 @@ import { Appbar } from "@/components/Appbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "SheCode",
+  title: "SheCode 2024",
   description: "Code get better when we do it together",
   icons: {
     icon: '/favicon.ico',

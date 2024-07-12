@@ -44,6 +44,12 @@ const Gallery: React.FC = () => {
                 <span className="text-fuchsia-500 text-2xl sm:text-4xl font-cookie-monster mr-2 transform -rotate-90">Grow Together</span>
               </div>
             )}
+            {index === 3 && (
+              <div className="absolute  -bottom-20  w-full text-center mb-4 z-90">
+              <a href="https://www.siue.edu/news/2020/03/SIUESheCodeEngagesYoungWomeninComputerScience.shtml" className="text-gray-300 text-xl font-bold underline mr-4">2020 Press Release   </a>
+              <a href="https://www.siue.edu/news/2018/12/SIUE-SheCode-Event-Engages-Young-Women-in-Computer-Science.shtml" className="text-gray-300 font-bold text-xl underline">2018 Press Release</a>
+            </div>
+            )}
           </motion.div>
         ))}
       </div>
