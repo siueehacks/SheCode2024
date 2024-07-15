@@ -42,7 +42,7 @@ export function SignupComponent() {
             <div className="success-message" id="success-message">
                 <div className="success-message-backdrop"></div>
                 <h2 className="success-message-header">Application Submitted!</h2>
-                <p className="success-message-body">You should have recieved an email confirming you registration.</p>
+                <p className="success-message-body">You should have recieved an email confirming your registration.</p>
             </div>
         </div>
     );
@@ -74,61 +74,33 @@ async function handler(data: any) {
     const formData = new FormData(data.target.form);
     const mainPanel = document.getElementById('main-panel');
     const successMessage = document.getElementById('success-message');
-    if (window.location.origin === "http://localhost:3000") {
-        const registerReq = await fetch("http://localhost:5500/api/apply",
-            {
-                method: "POST",
-                mode: 'cors',
-                headers: { "Content-Type": 'application/json' },
-                body: JSON.stringify({
-                    email: formData.get('email'),
-                    firstName: formData.get('first name'),
-                    lastName: formData.get('last name')
-                })
-            }
-        );
-        const data = await registerReq.json();
-        if (!data.success) {
-            alert(data.reason);
-            return;
-        } else {
-            if (mainPanel) {
-                mainPanel.style.display = "none";
-            }
-            if (successMessage) {
-                successMessage.style.display = "flex";
-            }
-            setTimeout(() => {
-                window.location.pathname = "/";
-            }, 60000);
+
+    const registerReq = await fetch("https://shecode.codes121.xyz/api/apply",
+        {
+            method: "POST",
+            mode: 'cors',
+            headers: { "Content-Type": 'application/json' },
+            body: JSON.stringify({
+                email: formData.get('email'),
+                firstName: formData.get('first name'),
+                lastName: formData.get('last name')
+            })
         }
+    );
+    const reqData = await registerReq.json();
+    if (!reqData.success) {
+        alert(reqData.reason);
+        return;
     } else {
-        const registerReq = await fetch("https://shecode.codes121.xyz/api/apply",
-            {
-                method: "POST",
-                mode: 'cors',
-                headers: { "Content-Type": 'application/json' },
-                body: JSON.stringify({
-                    email: formData.get('email'),
-                    firstName: formData.get('first name'),
-                    lastName: formData.get('last name')
-                })
-            }
-        );
-        const data = await registerReq.json();
-        if (!data.success) {
-            alert(data.reason);
-            return;
-        } else {
-            if (mainPanel) {
-                mainPanel.style.display = "none";
-            }
-            if (successMessage) {
-                successMessage.style.display = "flex";
-            }
-            setTimeout(() => {
-                window.location.pathname = "/";
-            }, 60000);
+        if (mainPanel) {
+            mainPanel.style.display = "none";
         }
+        if (successMessage) {
+            successMessage.style.display = "flex";
+        }
+        setTimeout(() => {
+            window.location.pathname = "/";
+        }, 60000);
     }
+
 }
