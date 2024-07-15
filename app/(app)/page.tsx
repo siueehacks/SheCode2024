@@ -1,8 +1,9 @@
-import  HomeComponent  from "@/components/Homepage"
+import HomeComponent from "@/components/Homepage"
 import About from "@/components/About";
 import Gallery from "@/components/Gallery";
 import Sponsor from "@/components/Sponsors";
 import FAQAndContact from "@/components/FAQAndContact";
+import Schedule from "@/components/Schedule";
 export default function Home() {
   return (
     <main className="pt-16">
@@ -10,6 +11,7 @@ export default function Home() {
       <About />
       <Gallery />
       <Sponsor />
+      <Schedule />
       <FAQAndContact />
     </main>
   );

@@ -1,0 +1,73 @@
+:root {
+    --darkPurple: rgb(19, 0, 22);
+    --purple: rgb(17, 0, 20);
+    --pink: rgb(217, 70, 239);
+    --lightPink: rgb(226, 146, 238);
+}
+
+.schedule {
+    position: relative;
+    width: 100%;
+    height: min-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    box-shadow: 0px 0px 20px 0px var(--darkPurple);
+    background-image: linear-gradient(35deg, rgb(30, 59, 138, .25) 0%, #00000000 50%);
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.25) 0%, rgb(30, 58, 138, .25) 100%); */
+    /* background-image: linear-gradient(black 0%, #581c87 100%); */
+    /* border: 2px solid red; */
+}
+
+.schedule-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 30%;
+    /* border: 2px solid green; */
+}
+
+.schedule-container-header {
+    position: relative;
+    font-size: 4em;
+    top: -.25em;
+    color: white;
+    text-align: center;
+    cursor: default;
+}
+
+.schedule-item {
+    position: relative;
+    width: min-content;
+    height: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding: 2%;
+    background-color: black;
+    border-radius: .5em;
+    margin-bottom: 1em;
+    box-shadow: 0px 0px 10px 2px var(--lightPink);
+}
+
+.schedule-item-label {
+    position: relative;
+    font-size: 1.5em;
+}
+
+.schedule-item-text,
+.schedule-item-label {
+    position: relative;
+    color: white;
+    text-wrap: nowrap;
+    width: 100%;
+    text-align: center;
+    cursor: default;
+}

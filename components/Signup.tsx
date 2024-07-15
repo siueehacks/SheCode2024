@@ -76,6 +76,7 @@ async function handler(data: any) {
     const successMessage = document.getElementById('success-message');
 
     const registerReq = await fetch("https://shecode.codes121.xyz/api/apply",
+        // const registerReq = await fetch("http://localhost:5500/api/apply", //testing purposes
         {
             method: "POST",
             mode: 'cors',
