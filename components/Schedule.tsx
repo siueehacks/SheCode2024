@@ -37,7 +37,8 @@ function ScheduleItem(info: any) {
 }
 
 async function getSchedule() {
-    const schedReq = await fetch("http://localhost:5500/api/schedule",
+    // const schedReq = await fetch("http://localhost:5500/api/schedule",
+    const schedReq = await fetch("http://51.222.121.147:8186/api/schedule",
         {
             method: "GET",
             mode: 'cors',
@@ -46,7 +47,6 @@ async function getSchedule() {
         }
     );
     const reqData = await schedReq.json();
-    console.log()
     if (reqData.success) {
         return reqData.data;
     } else {

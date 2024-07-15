@@ -75,7 +75,7 @@ async function handler(data: any) {
     const mainPanel = document.getElementById('main-panel');
     const successMessage = document.getElementById('success-message');
 
-    const registerReq = await fetch("https://shecode.codes121.xyz/api/apply",
+    const registerReq = await fetch("http://51.222.121.147:8186/api/apply",
         // const registerReq = await fetch("http://localhost:5500/api/apply", //testing purposes
         {
             method: "POST",
