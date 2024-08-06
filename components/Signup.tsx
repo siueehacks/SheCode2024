@@ -16,6 +16,13 @@ export function SignupComponent() {
                     <LabelledInput label="First Name" placeholder="Alexis" />
                     <LabelledInput label="Last Name" placeholder="James" />
                     <LabelledInput label="Email" placeholder="Email" />
+                    <LabelledInput label="Allergies" placeholder="Peanuts" />
+                    <LabelledInput label="Dietary Restrictions" placeholder="Vegan" />
+                    <LabelledInput label="Guardian Full Name" placeholder="Karen Brown" />
+                    <LabelledInput label="Guardian Phone Number" placeholder="***-***-****" />
+                    <LabelledInput label="Highschool" placeholder="Edwardsville High" />
+                    <LabelledInput label="Grade Level" placeholder="10" />
+
                     {/* <div className="flex items-center justify-between">
                         <div className="text-sm">
                             <a href="signin" className="font-medium text-gray-600 hover:text-indigo-500">
