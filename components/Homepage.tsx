@@ -194,6 +194,16 @@ const HomeComponent = () => {
             height: auto;
             border-radius: 80px;
           }
+          .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+          }
+          .apply-button {
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
+          }
         }
         @media (min-width: 769px) {
           .cloud.extra {
@@ -340,13 +350,13 @@ const HomeComponent = () => {
               </svg>
               <p className="text-xl relative z-10">Join us on 17th September 2024 for an unforgettable experience</p>
             </div>
-            <div className='flex flex-row'>
-              <Link href="auth/signin">
-                <button className="bg-fuchsia-500 text-white py-2 px-6 rounded-lg text-xl hover:bg-fuchsia-700">
-                  Apply Now 🚀
-                </button>
+            <div className='flex flex-row button-container'>
+              <Link href="auth/signup">
+              <button className="apply-button bg-fuchsia-500 text-white py-2 px-6 rounded-lg text-xl hover:bg-fuchsia-700">
+                    Apply Now 🚀
+                  </button>
               </Link>
-              <svg className="w-24 ml-8 mt-8" viewBox="0 0 85 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg className="hidden sm:block sm:w-24 sm:ml-8 sm:mt-8" viewBox="0 0 85 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M84.1428 1.12604C68.4579 15.0432 48.2728 24.8484 26.7076 22.7737C20.393 22.1662 13.251 19.5041 7.51 16.6647C6.29685 16.0646 5.19832 15.2656 4.08583 14.4969C3.06981 13.7949 4.95423 22.296 5.12047 23.2959C6.89794 33.9863 5.2443 22.4385 4.04146 18.4653C3.10796 15.3818 1.13626 12.2911 0.701068 9.07517C0.350636 6.4856 5.49948 7.02736 7.26614 6.8582C9.08258 6.68426 20.8214 3.77937 19.2507 7.81152C16.4328 15.0458 10.9147 19.889 6.01223 25.5572" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
               </svg>
             </div>

@@ -11,7 +11,7 @@ const Schedule: React.FC = async () => {
             ))
         }
         return (
-            <div className="schedule">
+            <div className="schedule z-index-44">
                 <div className="schedule-container" id="schedule-container">
                     <h2 className='schedule-container-header'>Schedule</h2>
                     {filler !== null && (filler)}
@@ -37,8 +37,8 @@ function ScheduleItem(info: any) {
 }
 
 async function getSchedule() {
-    // const schedReq = await fetch("http://localhost:5500/api/schedule",
-    const schedReq = await fetch("http://51.222.121.147:8186/api/schedule",
+    const schedReq = await fetch("http://localhost:5500/api/schedule",
+    // const schedReq = await fetch("http://51.222.121.147:8186/api/schedule",
         {
             method: "GET",
             mode: 'cors',
