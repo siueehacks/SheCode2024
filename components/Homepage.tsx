@@ -325,7 +325,7 @@ const HomeComponent = () => {
         <div className="star"></div>
         <div className="star"></div>
       </div>
-      <main className="px-12 py-24 text-white relative overflow-hidden pt-24">
+      <main className="lg:pl-52 px-12 py-24 text-white relative overflow-hidden pt-24">
         <section id="home" className="flex flex-col-reverse md:flex-row items-center justify-between my-12">
           <div className="text-center md:text-left md:w-1/2 mb-8 md:mb-0">
             <h1 className="text-5xl font-bold mb-4">Empowering Future Coders</h1>
@@ -348,7 +348,7 @@ const HomeComponent = () => {
                   </clipPath>
                 </defs>
               </svg>
-              <p className="text-xl relative z-10">Join us on 17th September 2024 for an unforgettable experience</p>
+              <p className="text-xl relative z-10">Join us on 7th September 2024 for an unforgettable experience</p>
             </div>
             <div className='flex flex-row button-container'>
               <Link href="auth/signup">

@@ -1,73 +1,94 @@
 :root {
     --darkPurple: rgb(19, 0, 22);
     --purple: rgb(17, 0, 20);
-    --pink: rgb(217, 70, 239);
-    --lightPink: rgb(226, 146, 238);
+    --fuchsia: rgb(217, 70, 239);
+    --lightFuchsia: rgb(226, 146, 238);
 }
 
 .schedule {
-    position: relative;
     width: 100%;
-    height: min-content;
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    align-content: center;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    box-shadow: 0px 0px 20px 0px var(--darkPurple);
-    background-image: linear-gradient(35deg, rgb(30, 59, 138, .25) 0%, #00000000 50%);
-    /* background-image: linear-gradient(rgba(0, 0, 0, 0.25) 0%, rgb(30, 58, 138, .25) 100%); */
-    /* background-image: linear-gradient(black 0%, #581c87 100%); */
-    /* border: 2px solid red; */
+    padding: 4% 0;
+    background-color: black;
 }
 
 .schedule-container {
-    position: relative;
+    width: 80%;
+    max-width: 800px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    width: 30%;
-    /* border: 2px solid green; */
+    align-items: center;
+    gap: 1.5em;
 }
 
 .schedule-container-header {
-    position: relative;
-    font-size: 4em;
-    top: -.25em;
-    color: white;
+    font-size: 3.5em;
+    color: #fff;
     text-align: center;
-    cursor: default;
+    margin-bottom: 1em;
+    font-weight: 600;
 }
 
 .schedule-item {
-    position: relative;
-    width: min-content;
-    height: 10%;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    padding: 2%;
-    background-color: black;
-    border-radius: .5em;
+    padding: 1.5em;
+    background-color: rgba(0, 0, 0, 0.85);
+    border-radius: 10px;
     margin-bottom: 1em;
-    box-shadow: 0px 0px 10px 2px var(--lightPink);
+    box-shadow: 0px 0px 15px 3px var(--lightFuchsia);
+    transition: transform 0.3s ease;
+}
+
+.schedule-item:hover {
+    transform: translateY(-5px);
 }
 
 .schedule-item-label {
-    position: relative;
-    font-size: 1.5em;
-}
-
-.schedule-item-text,
-.schedule-item-label {
-    position: relative;
-    color: white;
-    text-wrap: nowrap;
-    width: 100%;
+    font-size: 1.8em;
+    color: var(--fuchsia);
+    margin-bottom: 0.5em;
     text-align: center;
-    cursor: default;
+}
+
+.schedule-item-text {
+    color: white;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .schedule-container-header {
+        font-size: 2.5em;
+    }
+
+    .schedule-item {
+        padding: 1em;
+    }
+
+    .schedule-item-label {
+        font-size: 1.5em;
+    }
+
+    .schedule-item-text {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .schedule-container {
+        width: 90%;
+    }
+
+    .schedule-container-header {
+        font-size: 2em;
+    }
+
+    .schedule-item-label {
+        font-size: 1.2em;
+    }
+
+    .schedule-item-text {
+        font-size: 0.9em;
+    }
 }
