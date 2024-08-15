@@ -15,13 +15,13 @@ export function SignupComponent() {
                 <form className="mt-8 space-y-6" id="signup-form">
                     <LabelledInput label="First Name" placeholder="Alexis" />
                     <LabelledInput label="Last Name" placeholder="James" />
-                    <LabelledInput label="Email" placeholder="Email" />
+                    <LabelledInput label="Email" placeholder="Email" type="email" />
                     <LabelledInput label="Allergies" placeholder="Peanuts" />
                     <LabelledInput label="Dietary Restrictions" placeholder="Vegan" />
                     <LabelledInput label="Guardian Full Name" placeholder="Karen Brown" />
                     <LabelledInput label="Guardian Phone Number" placeholder="***-***-****" />
                     <LabelledInput label="Highschool" placeholder="Edwardsville High" />
-                    <LabelledInput label="Grade Level" placeholder="10" />
+                    <LabelledInput label="Grade Level" placeholder="10" type="number" />
 
                     {/* <div className="flex items-center justify-between">
                         <div className="text-sm">
@@ -81,8 +81,8 @@ async function handler(data: any) {
     const formData = new FormData(data.target.form);
     const mainPanel = document.getElementById('main-panel');
     const successMessage = document.getElementById('success-message');
-
-    const registerReq = await fetch("http://51.222.121.147:8186/api/apply",
+    const { apiURL } = require('./config');
+    const registerReq = await fetch(`${apiURL}/api/apply`,
         // const registerReq = await fetch("http://localhost:5500/api/apply", //testing purposes
         {
             method: "POST",
@@ -91,7 +91,15 @@ async function handler(data: any) {
             body: JSON.stringify({
                 email: formData.get('email'),
                 firstName: formData.get('first name'),
-                lastName: formData.get('last name')
+                lastName: formData.get('last name'),
+                allergies: formData.get('allergies'),
+                dietaryRestrictions: formData.get('dietary restrictions'),
+                guardian: {
+                    name: formData.get('guardian full name'),
+                    phone: formData.get('guardian phone number')
+                },
+                highschool: formData.get('highschool'),
+                grade: formData.get('grade level')
             })
         }
     );
