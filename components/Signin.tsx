@@ -33,7 +33,7 @@ export function SigninComponent() {
                 </form>
                 <div className="text-center">
                     <a href="signup" className="font-medium text-gray-600 hover:text-zinc-400">
-                        Don't have an account? Sign up
+                        Don&#39;t have an account? Sign up
                     </a>
                 </div>
             </div>
