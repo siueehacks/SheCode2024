@@ -4,7 +4,7 @@ import { SparklesIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
 
 const FAQAndContact: React.FC = () => {
   const faqData = [
-    { question: 'When and where is SheCode?', answer: 'SheCode will be held on Saturday, September 7th, 2024 in Southern Illinois University Edwardsville’s Engineering Building.' },
+    { question: 'When and where is SheCode?', answer: 'SheCode will be held on Saturday, September 7th, 2024 in Southern Illinois University Edwardsville&#39;s Engineering Building.' },
     { question: 'Where do I park?', answer: 'Parking is available for free in Visitor Lot B near the Engineering Building.' },
     { question: 'Who can participate?', answer: 'This event is geared towards female high school students. However, mentors will be available for each team to help.' },
     { question: 'What does this event cost?', answer: 'Nothing! This event is totally free thanks to the generosity of our sponsors. There will be a lunch provided for each person.' },
@@ -17,7 +17,7 @@ const FAQAndContact: React.FC = () => {
         <div className="text-center mb-12">
           <SparklesIcon className="h-16 w-16 mx-auto mb-4 text-fuchsia-500" />
           <h1 className="text-5xl font-bold mb-4">Frequently Asked Questions</h1>
-          <h2 className="text-2xl text-blue-300 italic">- we've got the answers.</h2>
+          <h2 className="text-2xl text-blue-300 italic">- we&#39;ve got the answers.</h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -46,8 +46,8 @@ const FAQAndContact: React.FC = () => {
           <h2 className="text-3xl font-bold mb-4">Contact Us</h2>
           <p className="mb-4 text-xl">Any questions? Let us know!</p>
           <p className="mb-6 text-gray-300">
-            We're here to help. If your question isn't answered above, please don't hesitate to reach out.
-            We'll get back to you as soon as we can!
+            We&#39;re here to help. If your question isn&#39;t answered above, please don&#39;t hesitate to reach out.
+            We&#39;ll get back to you as soon as we can!
           </p>
           <a
             href="mailto:siue.ehacks@gmail.com"

@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -36,7 +35,7 @@ const Gallery: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: index * 0.1 }}
           >
-            <Image
+            <img
               src={image.url}
               alt={image.alt}
               width={image.width}
@@ -71,7 +70,7 @@ const Gallery: React.FC = () => {
         <Slider {...settings}>
           {images.map((image, index) => (
             <div key={index} className="relative gallery-item  ">
-              <Image
+              <img
                 src={image.url}
                 alt={image.alt}
                 width={image.width}

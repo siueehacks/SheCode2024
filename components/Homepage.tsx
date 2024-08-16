@@ -1,66 +1,7 @@
 "use client";
-import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef } from "react";
 const HomeComponent = () => {
-  const musicPlayers = useRef<HTMLAudioElement | undefined>(
-    typeof Audio !== "undefined" ? new Audio("/audio/home.mp3") : undefined
-  );
-  let isPlaying = false;
-  useEffect(() => {
-    document.addEventListener('mousemove', () => {
-      if (musicPlayers.current && !isPlaying) {
-        musicPlayers.current.volume = 0.01;
-        musicPlayers.current.autoplay = true;
-        isPlaying = true;
-        musicPlayers.current.play().catch((err) => {
-          if (musicPlayers.current && !isPlaying) {
-            musicPlayers.current.volume = 0.01;
-          }
-          isPlaying = false;
-          return;
-        })
-      } else if (!musicPlayers.current) {
-        musicPlayers.current = new Audio('/audio/home.mp3');
-        musicPlayers.current.volume = 0.01;
-        musicPlayers.current.autoplay = true;
-        isPlaying = true;
-        musicPlayers.current.play().catch((err) => {
-          if (musicPlayers.current && !isPlaying) {
-            musicPlayers.current.volume = 0.01;
-          }
-          isPlaying = false;
-          return;
-        })
-      }
-    })
-    document.addEventListener('scroll', () => {
-      if (musicPlayers.current && !isPlaying) {
-        musicPlayers.current.volume = 0.01;
-        musicPlayers.current.autoplay = true;
-        musicPlayers.current.play().catch((err) => {
-          if (musicPlayers.current && !isPlaying) {
-            musicPlayers.current.volume = 0.01;
-          }
-          isPlaying = false;
-          return;
-        })
-        isPlaying = true;
-      } else if (!musicPlayers.current) {
-        musicPlayers.current = new Audio('/audio/home.mp3');
-        musicPlayers.current.volume = 0.01;
-        musicPlayers.current.autoplay = true;
-        musicPlayers.current.play().catch((err) => {
-          if (musicPlayers.current && !isPlaying) {
-            musicPlayers.current.volume = 0.01;
-          }
-          isPlaying = false;
-          return;
-        })
-        isPlaying = true;
-      }
-    });
-  })
   return (
     <div className="bg-black">
       <style jsx>{`
@@ -367,7 +308,7 @@ const HomeComponent = () => {
           <div className="md:w-1/2 px-12 relative mb-8 md:mb-0">
             <div className="relative">
               <div className="string landing"></div>
-              <Image className="landing-image" src="/landing.png" alt="SheCode" width={500} height={500}  style={{borderRadius: "6vw"}}/>
+              <img className="landing-image" src="/landing.png" alt="SheCode" width={500} height={500}  style={{borderRadius: "6vw"}}/>
             </div>
             <div className="absolute top-0 left-96 transform -translate-x-1/2 flex items-center justify-center">
               <div className="cloud large" style={{ width: '220px', height: '90px' }}>
