@@ -4,11 +4,11 @@ import { SparklesIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
 
 const FAQAndContact: React.FC = () => {
   const faqData = [
-    { question: 'When and where is SheCode?', answer: 'SheCode will be held on Saturday, September 7th, 2024 in Southern Illinois University Edwardsville&#39;s Engineering Building.' },
+    { question: 'When and where is SheCode?', answer: 'SheCode will be held on Saturday, September 7th, 2024 in Southern Illinois University Edwardsville\'s Engineering Building.' },
     { question: 'Where do I park?', answer: 'Parking is available for free in Visitor Lot B near the Engineering Building.' },
-    { question: 'Who can participate?', answer: 'This event is geared towards female high school students. However, mentors will be available for each team to help.' },
+    { question: 'Who can participate?', answer: 'This event is geared towards female high school students with no coding experience. However, the event is open to all high school students.' },
     { question: 'What does this event cost?', answer: 'Nothing! This event is totally free thanks to the generosity of our sponsors. There will be a lunch provided for each person.' },
-    { question: 'What do I need to bring?', answer: 'You should bring your cell phone (iOS or Android), and a phone charger.' }
+    { question: 'What do I need to bring?', answer: 'Make sure to bring a signed copy of the waiver if you did not submit one via email.' }
   ];
 
   return (
