@@ -26,7 +26,7 @@ const Location: React.FC = () => {
       </svg>
       
       <div className="w-full max-w-6xl h-96 rounded-xl overflow-hidden shadow-2xl">
-        <LoadScript googleMapsApiKey="AIzaSyCtjvro1dqE7US4M8IRjhnYpjvXQFDWVJI"> {/* API KEY GOES HERE */}
+        <LoadScript googleMapsApiKey=""> {/* API KEY GOES HERE */}
           <GoogleMap
             mapContainerStyle={mapContainerStyle}
             center={center}
