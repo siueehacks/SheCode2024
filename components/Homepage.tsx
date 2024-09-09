@@ -289,7 +289,7 @@ const HomeComponent = () => {
                   </clipPath>
                 </defs>
               </svg>
-              <p className="text-xl relative z-10">Join us on 7th September 2024 for an unforgettable experience</p>
+              <p className="text-xl relative z-10">Join us on 6th November 2024 for an unforgettable experience</p>
             </div>
             <div className='flex flex-row button-container'>
               <Link href="auth/signup">

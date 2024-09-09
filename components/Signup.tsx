@@ -50,6 +50,7 @@ export function SignupComponent() {
                 <div className="success-message-backdrop"></div>
                 <h2 className="success-message-header">Application Submitted!</h2>
                 <p className="success-message-body">You should have recieved an email confirming your registration.</p>
+                <p className="success-message-body">Any questions? Contact us at siue.ehacks@gmail.com</p>
             </div>
         </div>
     );
