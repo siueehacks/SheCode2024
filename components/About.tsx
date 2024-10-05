@@ -8,7 +8,7 @@ const About = () => {
         <div className="bg-black border-2 border-fuchsia-500 p-4 sm:p-6 rounded-lg transform hover:scale-105 transition-transform duration-300 shadow-lg shadow-fuchsia-500/50">
           <AcademicCapIcon className="h-10 w-10 sm:h-12 sm:w-12 text-fuchsia-500 mb-4 mx-auto" />
           <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 text-center">What is SheCode?</h2>
-          <p className="text-center text-xs sm:text-sm md:text-base">SheCode is an empowering one-day event at SIUE, designed for female high school students to explore the fundamentals of coding in an engaging and supportive environment.</p>
+          <p className="text-center text-xs sm:text-sm md:text-base">SheCode is an empowering one-day event at SIUE, designed for high school students to explore the fundamentals of coding in an engaging and supportive environment.</p>
         </div>
         <div className="bg-black border-2 border-fuchsia-500 p-4 sm:p-6 rounded-lg transform hover:scale-105 transition-transform duration-300 shadow-lg shadow-fuchsia-500/50">
           <GiftIcon className="h-10 w-10 sm:h-12 sm:w-12 text-fuchsia-500 mb-4 mx-auto" />
